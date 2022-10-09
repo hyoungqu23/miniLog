@@ -1,6 +1,8 @@
 # Mini Log
 
-Next.js, TypeScript, Tailwind CSS, GraphQL, GraphCMS, ESLint, Prettier, Husky를 활용한 블로그입니다.
+Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로그입니다.
+
+[개발 기록 보러가기](https://hyoungmin.notion.site/b568c0b99ade4cd7bef91f5d2bbac845)
 
 ## 기간
 
@@ -11,40 +13,28 @@ Next.js, TypeScript, Tailwind CSS, GraphQL, GraphCMS, ESLint, Prettier, Husky를
 - Next.js
 - TypeScript
 - Tailwind CSS
-- GraphQL
-- GraphCMS
 - ESLint
 - Prettier
 - Husky
 
 ## 디렉토리 구조
 
-[출처](https://woochanleee.github.io/project-tree-generator/)
-
 ```
 📦
-├─ .eslintrc.json
-├─ .gitignore
 ├─ .husky
-│  ├─ pre-commit
-│  └─ pre-push
-├─ .prettierrc
-├─ README.md
-├─ next.config.js
-├─ package-lock.json
-├─ package.json
 ├─ pages
 │  ├─ _app.tsx
-│  ├─ api
-│  │  └─ hello.ts
 │  └─ index.tsx
-├─ postcss.config.js
 ├─ public
-│  ├─ favicon.ico
-│  └─ vercel.svg
 ├─ styles
-│  ├─ Home.module.css
-│  └─ globals.css
+├─ README.md
+├─ .eslintrc.json
+├─ .prettierrc
+├─ .gitignore
+├─ package.json
+├─ package-lock.json
+├─ next.config.js
+├─ postcss.config.js
 ├─ tailwind.config.js
 └─ tsconfig.json
 ```

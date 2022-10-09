@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import React from 'react';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 
 type Post = {
   slug: string;
@@ -10,27 +11,23 @@ type Post = {
     title: string;
     summary: string;
     date: string;
-    category: string[];
+    category: string;
   };
 };
 
-type Props = {
-  posts: Post[];
-};
-
-const Post = ({ posts }: Props) => {
+const Post = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
-      <h1>Posts</h1>
-      {posts.map((post) => (
-        <>
-          <h2>{post.frontmatter.title}</h2>
-          <p>{post.frontmatter.summary}</p>
-          <p>{post.frontmatter.date}</p>
-          {post.frontmatter.category.map((category) => (
-            <p>{category}</p>
-          ))}
-        </>
+      <h1 className="text-3xl">Posts</h1>
+      {posts.map(({ slug, frontmatter }: Post) => (
+        <div className="flex flex-col mb-10" key={slug}>
+          <Link href={slug}>
+            <p className="text-xl text-bold ">{frontmatter.title}</p>
+          </Link>
+          <p>{frontmatter.summary}</p>
+          <p>{frontmatter.date}</p>
+          <p>{frontmatter.category}</p>
+        </div>
       ))}
     </div>
   );

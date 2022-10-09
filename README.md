@@ -28,7 +28,7 @@ Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로�
 ├─ public
 ├─ styles
 ├─ README.md
-├─ .eslintrc.json
+├─ .eslintrc.ts
 ├─ .prettierrc
 ├─ .gitignore
 ├─ package.json

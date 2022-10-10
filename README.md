@@ -2,6 +2,8 @@
 
 Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로그입니다.
 
+[블로그 보러가기](https://minilog-dev.vercel.app/post)
+
 [개발 기록 보러가기](https://hyoungmin.notion.site/b568c0b99ade4cd7bef91f5d2bbac845)
 
 ## 기간

@@ -8,7 +8,7 @@ Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로�
 
 ## 기간
 
-2022.09.27 ~ 진행중
+2022.10.09 ~ 진행중
 
 ## 기술 스택
 
@@ -23,18 +23,23 @@ Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로�
 
 ```
 📦
-├─ .husky
+├─ __post
 ├─ pages
 │  ├─ _app.tsx
-│  └─ index.tsx
-├─ public
+│  ├─ index.tsx
+│  └─ post
+│     ├─ [slug].tsx
+│     └─ index.tsx
 ├─ styles
 ├─ README.md
-├─ .eslintrc.ts
-├─ .prettierrc
-├─ .gitignore
 ├─ package.json
 ├─ package-lock.json
+├─ .gitignore
+├─ .husky
+├─ .prettierignore
+├─ .prettierrc
+├─ .eslintignore
+├─ .eslintrc.ts
 ├─ next.config.js
 ├─ postcss.config.js
 ├─ tailwind.config.js

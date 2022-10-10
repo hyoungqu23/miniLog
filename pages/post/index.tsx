@@ -21,7 +21,12 @@ const Post = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <h1 className="text-3xl">Posts</h1>
       {posts.map(({ slug, frontmatter }: Post) => (
         <div className="flex flex-col mb-10" key={slug}>
-          <Link href={slug}>
+          <Link
+            href={{
+              pathname: '/post/[slug]',
+              query: { slug },
+            }}
+          >
             <p className="text-xl text-bold ">{frontmatter.title}</p>
           </Link>
           <p>{frontmatter.summary}</p>

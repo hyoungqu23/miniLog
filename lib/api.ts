@@ -13,9 +13,9 @@ export const getMetaDataFromMarkdown = (markdownFile: string) => {
     'utf-8'
   );
 
-  const { data: metaData } = matter(metaDataFromMarkdown);
+  const { data: metadata } = matter(metaDataFromMarkdown);
 
-  return metaData;
+  return metadata;
 };
 
 export const getSlugFromMarkdown = (markdownFile: string) => {
@@ -25,11 +25,11 @@ export const getSlugFromMarkdown = (markdownFile: string) => {
 export const getAllMetadata = () => {
   const allMetadata = getMarkdownFiles().map((file) => {
     const slug = getSlugFromMarkdown(file);
-    const metaData = getMetaDataFromMarkdown(file);
+    const metadata = getMetaDataFromMarkdown(file);
 
     return {
       slug,
-      metaData,
+      metadata,
     };
   });
 

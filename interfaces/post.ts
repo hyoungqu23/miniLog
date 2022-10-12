@@ -6,10 +6,8 @@ export type AllMetadataType = {
 };
 
 export type MetadataType = {
-  metadata: {
-    title: string;
-    summary: string;
-    date: string;
-    category: string;
-  };
+  title: string;
+  summary: string;
+  date: string;
+  category: string;
 };

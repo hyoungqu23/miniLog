@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { MetadataType } from 'interfaces/post';
+import { AllMetadataType } from 'interfaces/post';
 
-const PostListItem = ({ slug, metadata }: MetadataType) => {
+const PostListItem = ({ slug, metadata }: AllMetadataType) => {
   return (
     <div className="flex flex-col mb-10" key={slug}>
       <Link

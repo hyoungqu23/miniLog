@@ -2,20 +2,26 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { MARKDOWN_DIRECTORY, MARKDOWN_FILENAME_EXTENSION } from 'lib/constants';
+import { markdownToHtml } from 'lib/markdownToHtml';
 
-export const getMarkdownFiles = () => {
+export const getAllMarkdown = (): string[] => {
   return fs.readdirSync(path.join(MARKDOWN_DIRECTORY));
 };
 
-export const getMetaDataFromMarkdown = (markdownFile: string) => {
-  const metaDataFromMarkdown = fs.readFileSync(
-    path.join(MARKDOWN_DIRECTORY, markdownFile),
-    'utf-8'
-  );
+export const getMarkdown = (filename: string = '') => {
+  return fs
+    .readFileSync(path.join(MARKDOWN_DIRECTORY, filename + MARKDOWN_FILENAME_EXTENSION), 'utf-8')
+    .toString();
+};
 
-  const { data: metadata } = matter(metaDataFromMarkdown);
+export const getDataFromMarkdown = (
+  markdownFile: string
+): { metadata: { [key: string]: string }; content: string } => {
+  const dataFromMarkdown = fs.readFileSync(path.join(MARKDOWN_DIRECTORY, markdownFile), 'utf-8');
 
-  return metadata;
+  const { data: metadata, content } = matter(dataFromMarkdown);
+
+  return { metadata, content };
 };
 
 export const getSlugFromMarkdown = (markdownFile: string) => {
@@ -23,9 +29,9 @@ export const getSlugFromMarkdown = (markdownFile: string) => {
 };
 
 export const getAllMetadata = () => {
-  const allMetadata = getMarkdownFiles().map((file) => {
+  const allMetadata = getAllMarkdown().map((file) => {
     const slug = getSlugFromMarkdown(file);
-    const metadata = getMetaDataFromMarkdown(file);
+    const { metadata } = getDataFromMarkdown(file);
 
     return {
       slug,
@@ -34,4 +40,11 @@ export const getAllMetadata = () => {
   });
 
   return allMetadata;
+};
+
+export const getAllData = async (slug: string) => {
+  const markdown = getDataFromMarkdown(slug + MARKDOWN_FILENAME_EXTENSION);
+  const html = await markdownToHtml(markdown.content);
+
+  return { metadata: markdown.metadata, html: html.value };
 };

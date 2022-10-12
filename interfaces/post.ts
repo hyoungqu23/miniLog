@@ -1,7 +1,11 @@
 export type PostType = {};
 
-export type MetadataType = {
+export type AllMetadataType = {
   slug: string;
+  metadata: MetadataType;
+};
+
+export type MetadataType = {
   metadata: {
     title: string;
     summary: string;

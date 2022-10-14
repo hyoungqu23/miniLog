@@ -15,6 +15,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #ff0000;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,4 +31,53 @@ a {
     color: white;
     background: black;
   }
+}
+
+.unreset h1 {
+  @apply text-3xl font-bold my-5;
+}
+
+.unreset h2 {
+  @apply text-2xl font-bold my-4;
+}
+
+.unreset h3 {
+  @apply text-xl font-bold my-4;
+}
+
+.unreset p {
+  @apply my-4;
+}
+
+.unreset a {
+  @apply bg-red-500/50 cursor-pointer;
+}
+
+.unreset hr {
+  @apply border-2 m-2 bg-gray-800 border-gray-800;
+}
+
+.unreset p > code,
+.unreset h1 > code,
+.unreset h2 > code,
+.unreset h3 > code {
+  @apply font-mono font-bold px-1 bg-gray-300 rounded-sm text-red-500;
+}
+
+.unreset ul,
+.unreset menu {
+  @apply list-disc my-3 pl-5;
+}
+
+.unreset ol {
+  @apply list-decimal my-3 pl-5;
+}
+
+.unreset b,
+.unreset strong {
+  @apply font-bold;
+}
+
+.unreset .remark-highlight {
+  @apply bg-gray-400 rounded-md p-5 font-mono leading-4;
 }

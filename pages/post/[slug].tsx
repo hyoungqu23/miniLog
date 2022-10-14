@@ -11,15 +11,23 @@ const Post = ({
   metadata: { title, date, category, summary },
   html,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const categoryList: string[] = category.split(',');
+
   return (
     <section>
-      <div>
+      <div className="flex flex-col">
         <h1>{title}</h1>
         <p>{summary}</p>
-        <p>{category}</p>
+        <div className="flex gap-5">
+          {categoryList.map((category: string) => (
+            <span className="text-sm w-fit rounded px-2 even:bg-pink-500/50 odd:bg-sky-500/50">
+              {category}
+            </span>
+          ))}
+        </div>
         <p>{date}</p>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="unreset" dangerouslySetInnerHTML={{ __html: html }} />
     </section>
   );
 };

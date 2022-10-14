@@ -10,7 +10,7 @@ type Props = {
 const Post = ({ allMetadata }: Props) => {
   return (
     <>
-      <h1 className="text-3xl">Posts</h1>
+      <h1 className="text-3xl mb-14">Posts</h1>
       {allMetadata.map(({ slug, metadata }: AllMetadataType) => (
         <PostListItem key={slug} slug={slug} metadata={metadata} />
       ))}

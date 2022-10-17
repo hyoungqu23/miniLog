@@ -1,8 +1,22 @@
 import http from 'services';
+import { AxiosResponse } from 'axios';
 import { DATABASE_ID } from 'config';
+import { NotionPostDataType } from 'types';
 
-export const getNotionPostList = async () => {
-  const response = await http.post(`${DATABASE_ID}/query`);
+type Filter = {
+  filter: {
+    property: string;
+    status: {
+      equals: string;
+    };
+  };
+};
+
+export const getNotionPostList = async (filter: Filter) => {
+  const response = await http.post<NotionPostDataType, AxiosResponse<NotionPostDataType>, Filter>(
+    `${DATABASE_ID}/query`,
+    filter
+  );
 
   return response;
 };

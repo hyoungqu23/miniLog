@@ -1,5 +1,5 @@
 import PostCard from 'components/post/PostCard';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import { getNotionPostList } from 'services/notionApiServices';
 import { NotionPostDataType } from 'types';
 
@@ -25,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await getNotionPostList({
     filter: {
       property: 'status',

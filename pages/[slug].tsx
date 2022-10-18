@@ -5,8 +5,8 @@ import {
   getNotionPostPageId,
   getNotionPostSlugs,
 } from 'services/notionApiServices';
-import { NotionRenderer } from 'react-notion-x';
 import { ExtendedRecordMap } from 'notion-types';
+import PostDetail from 'components/post/PostDetail';
 
 type PostProps = {
   blockMap: ExtendedRecordMap;
@@ -15,7 +15,7 @@ type PostProps = {
 const Post = ({ blockMap }: PostProps) => {
   return (
     <>
-      <NotionRenderer recordMap={blockMap} fullPage={true} darkMode={false} />
+      <PostDetail data={blockMap} />
     </>
   );
 };

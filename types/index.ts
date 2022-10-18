@@ -98,3 +98,21 @@ export interface NotionPostDataType {
   has_more: boolean;
   type: string;
 }
+
+export type statusFilter = {
+  filter: {
+    property: string;
+    status: {
+      equals: string;
+    };
+  };
+};
+
+export type slugFilter = {
+  filter: {
+    property: string;
+    rich_text: {
+      equals: string | string[] | undefined;
+    };
+  };
+};

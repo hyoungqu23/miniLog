@@ -100,12 +100,18 @@ export interface NotionPostDataType {
 }
 
 export type statusFilter = {
-  filter: {
+  filter?: {
     property: string;
     status: {
       equals: string;
     };
   };
+  sorts?: [
+    {
+      property: string;
+      direction: string;
+    }
+  ];
 };
 
 export type slugFilter = {

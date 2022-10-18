@@ -12,6 +12,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
     <>
       {data.results.map(({ properties }) => (
         <PostCard
+          key={properties.slug.rich_text[0].plain_text}
           title={properties.title.title[0].plain_text}
           slug={properties.slug.rich_text[0].plain_text}
           date={properties.date.date.start}
@@ -33,6 +34,12 @@ export const getStaticProps: GetStaticProps = async () => {
         equals: 'Upload',
       },
     },
+    sorts: [
+      {
+        property: 'date',
+        direction: 'descending',
+      },
+    ],
   });
 
   const data = response.data;

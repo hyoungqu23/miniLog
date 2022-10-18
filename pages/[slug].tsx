@@ -15,7 +15,7 @@ type PostProps = {
 const Post = ({ blockMap }: PostProps) => {
   return (
     <>
-      <NotionRenderer recordMap={blockMap} fullPage={true} darkMode={true} />
+      <NotionRenderer recordMap={blockMap} fullPage={true} darkMode={false} />
     </>
   );
 };

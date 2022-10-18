@@ -5,5 +5,14 @@
   "semi": true,
   "tabWidth": 2,
   "useTabs": false,
-  "printWidth": 100
+  "printWidth": 100,
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)|^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "^(@/lib/(.*)$)|^(@/components/(.*)$)|^(@/styles/(.*)$)",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true
 }

@@ -9,7 +9,7 @@ export const getNotionPostList = async (filter: statusFilter) => {
     NotionPostDataType,
     AxiosResponse<NotionPostDataType>,
     statusFilter
-  >(`${DATABASE_ID}/query`, filter);
+  >(`databases/${DATABASE_ID}/query`, filter);
 
   return response;
 };

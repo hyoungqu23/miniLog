@@ -4,9 +4,11 @@ import { ROUTES } from 'constants/routes';
 
 const Header = () => {
   return (
-    <header className="flex justify-center gap-5 text-2xl italic tracking-wider font-bold md:text-3xl">
+    <header className="sticky top-0 flex justify-center gap-5 text-2xl italic font-bold tracking-wider bg-white md:text-3xl">
       <Link href={ROUTES.HOME}>HOME</Link>
       <Link href={ROUTES.BLOG}>BLOG</Link>
+      <Link href={ROUTES.PORTFOLIO}>PORTFOLIO</Link>
+      <Link href={ROUTES.RESUME}>RESUME</Link>
     </header>
   );
 };

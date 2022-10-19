@@ -41,6 +41,12 @@ const Document = () => (
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <link
+        rel="stylesheet"
+        as="style"
+        crossOrigin="anonymous"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+      />
     </Head>
     <body>
       <Main />

@@ -1,50 +1,15 @@
-import PostCard from 'components/post/PostCard';
-import type { GetStaticProps, NextPage } from 'next';
-import { getNotionPostList } from 'services/notionApiServices';
-import { NotionPostDataType } from 'types';
+import React from 'react';
 
-type HomeProps = {
-  data: NotionPostDataType;
-};
+type Props = {};
 
-const Home: NextPage<HomeProps> = ({ data }) => {
+const Home = (props: Props) => {
   return (
     <>
-      {data.results.map(({ properties }) => (
-        <PostCard
-          key={properties.slug.rich_text[0].plain_text}
-          title={properties.title.title[0].plain_text}
-          slug={properties.slug.rich_text[0].plain_text}
-          date={properties.date.date.start}
-          summary={properties.summary.rich_text[0].plain_text}
-          category={properties.category.multi_select}
-        />
-      ))}
+      <h1 className="w-full text-lg font-semibold text-center">
+        안녕하세요🖐️, 프론트엔드 개발자 이형민의 기술 블로그입니다.
+      </h1>
     </>
   );
 };
 
 export default Home;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await getNotionPostList({
-    filter: {
-      property: 'status',
-      status: {
-        equals: 'Upload',
-      },
-    },
-    sorts: [
-      {
-        property: 'date',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  const data = response.data;
-
-  return {
-    props: { data },
-  };
-};

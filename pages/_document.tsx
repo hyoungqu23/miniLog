@@ -3,6 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 const Document = () => (
   <Html>
     <Head>
+      <link rel="icon" href="public/favicon.svg" />
       <meta charSet="UTF-8" />
       <meta name="author" content="Hyoungmin Lee" />
       <meta

@@ -13,7 +13,7 @@ type Props = {
 const PostCard = ({ title, slug, date, summary, category }: Props) => {
   return (
     <Link href={`blog/${slug}`}>
-      <div className="flex flex-col w-full p-5 shadow-xl cursor-pointer hover:bg-red-500/10">
+      <div className="flex flex-col w-full p-5 shadow-xl cursor-pointer dark:hover:bg-white/10 hover:bg-red-500/10">
         <h2 className="my-3 text-sm font-bold md:text-2xl">{title}</h2>
         <div className="flex flex-col justify-between text-xs text-gray-500 md:flex-row md:text-sm">
           <p>{summary}</p>

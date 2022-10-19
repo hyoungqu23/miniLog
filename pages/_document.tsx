@@ -3,7 +3,8 @@ import { Html, Head, Main, NextScript } from 'next/document';
 const Document = () => (
   <Html>
     <Head>
-      <link rel="icon" href="public/favicon.svg" />
+      <title>miniLog</title>
+      <link rel="icon" href="favicon.svg" />
       <meta charSet="UTF-8" />
       <meta name="author" content="Hyoungmin Lee" />
       <meta
@@ -31,7 +32,7 @@ const Document = () => (
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://minilog-dev.vercel.app/" />
       <meta property="og:title" content="미니로그 miniLog" />
-      <meta property="og:image" content="public/main.svg" />
+      <meta property="og:image" content="main.svg" />
       <meta
         property="og:description"
         content="프론트엔드 개발자 이형민의 개발 블로그, 미니로그⭐입니다."

@@ -2,6 +2,7 @@ import PostCard from 'components/post/PostCard';
 import type { GetStaticProps, NextPage } from 'next';
 import { getNotionPostList } from 'services/notionApiServices';
 import { NotionPostDataType } from 'types';
+import Head from 'next/head';
 
 type BlogProps = {
   data: NotionPostDataType;
@@ -10,6 +11,9 @@ type BlogProps = {
 const Blog: NextPage<BlogProps> = ({ data }) => {
   return (
     <>
+      <Head>
+        <title>미니로그</title>
+      </Head>
       {data.results.map(({ properties }) => (
         <PostCard
           key={properties.slug.rich_text[0].plain_text}

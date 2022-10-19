@@ -7,14 +7,21 @@ import {
 } from 'services/notionApiServices';
 import { ExtendedRecordMap } from 'notion-types';
 import PostDetail from 'components/post/PostDetail';
+import Head from 'next/head';
+import { getPageTitle } from 'notion-utils';
 
 type PostProps = {
   blockMap: ExtendedRecordMap;
 };
 
 const Post = ({ blockMap }: PostProps) => {
+  const title = getPageTitle(blockMap);
+
   return (
     <>
+      <Head>
+        <title>{`미니로그 - ${title}`}</title>
+      </Head>
       <PostDetail data={blockMap} />
     </>
   );

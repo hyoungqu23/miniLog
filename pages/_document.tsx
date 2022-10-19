@@ -18,17 +18,16 @@ const Document = () => (
         name="description"
         content="프론트엔드 개발자 이형민의 개발 블로그, 미니로그⭐입니다."
       />
-      <meta http-equiv="Content-Script-Type" content="Text/javascript" />
+      <meta httpEquiv="Content-Script-Type" content="Text/javascript" />
       <meta name="location" content="Seoul, Republic of Korea" />
       <meta name="robots" content="ALL" />
       <meta name="date" content="2022-10-19T18:00:00+09:00" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="reply-to" content="hyoungqu23@gmail.com" />
-      <meta http-equiv="email" content="hyoungqu23@gmail.com" />
-      <meta http-equiv="copyright" content="Copyright (c) 2022 Hyoungmin Lee" />
-      <meta http-equiv="publisher" content="Hyoungmin Lee" />
-      <meta http-equiv="Other Agent" content="Hyoungmin Lee" />
-      <meta http-equiv="Generator" content="Visual Studio Code" />
+      <meta httpEquiv="reply-to" content="hyoungqu23@gmail.com" />
+      <meta httpEquiv="email" content="hyoungqu23@gmail.com" />
+      <meta httpEquiv="copyright" content="Copyright (c) 2022 Hyoungmin Lee" />
+      <meta httpEquiv="publisher" content="Hyoungmin Lee" />
+      <meta httpEquiv="Other Agent" content="Hyoungmin Lee" />
+      <meta httpEquiv="Generator" content="Visual Studio Code" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://minilog-dev.vercel.app/" />
       <meta property="og:title" content="미니로그 miniLog" />
@@ -41,6 +40,12 @@ const Document = () => (
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <link
+        rel="stylesheet"
+        as="style"
+        crossOrigin="anonymous"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"
+      />
     </Head>
     <body>
       <Main />

@@ -6,9 +6,11 @@ import {
   getNotionPostSlugs,
 } from 'services/notionApiServices';
 import { ExtendedRecordMap } from 'notion-types';
-import PostDetail from 'components/post/PostDetail';
 import Head from 'next/head';
 import { getPageTitle } from 'notion-utils';
+import dynamic from 'next/dynamic';
+
+const PostDetail = dynamic(() => import('components/post/PostDetail'));
 
 type PostProps = {
   blockMap: ExtendedRecordMap;

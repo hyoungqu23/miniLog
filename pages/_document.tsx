@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document = () => (
-  <Html>
+  <Html lang="ko">
     <Head>
       <title>miniLog</title>
       <link rel="icon" href="favicon.svg" />

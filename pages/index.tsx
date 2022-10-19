@@ -1,8 +1,6 @@
 import React from 'react';
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return (
     <>
       <h1 className="w-full text-lg font-semibold text-center">

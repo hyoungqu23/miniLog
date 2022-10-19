@@ -14,8 +14,8 @@ const PostCard = ({ title, slug, date, summary, category }: Props) => {
   return (
     <Link href={`blog/${slug}`}>
       <div className="flex flex-col w-full p-5 shadow-xl cursor-pointer hover:bg-red-500/10">
-        <h2 className="my-3 text-base font-bold md:text-2xl">{title}</h2>
-        <div className="flex justify-between text-xs text-gray-500 md:text-sm">
+        <h2 className="my-3 text-sm font-bold md:text-2xl">{title}</h2>
+        <div className="flex flex-col justify-between text-xs text-gray-500 md:flex-row md:text-sm">
           <p>{summary}</p>
           <p>{date}</p>
         </div>
@@ -23,7 +23,7 @@ const PostCard = ({ title, slug, date, summary, category }: Props) => {
           {category.map((tag) => (
             <span
               key={tag.id}
-              className={`mr-1 md:mr-3 px-1 bg-${tag.color}-500 text-xs text-${tag.color}-500`}
+              className={`text-xs md:mr-3 px-1 bg-${tag.color}-500 text-${tag.color}-500`}
             >
               {tag.name}
             </span>

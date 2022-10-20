@@ -2,9 +2,13 @@
 
 Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로그입니다.
 
-[블로그 보러가기](https://minilog-dev.vercel.app/post)
+## [블로그 보러가기](https://minilog-dev.vercel.app/post)
 
-[개발 기록 보러가기](https://hyoungmin.notion.site/b568c0b99ade4cd7bef91f5d2bbac845)
+#### [기술 블로그 미니로그 프로젝트: SSG로 정적 블로그 만들기](https://minilog.vercel.app/blog/minilog-ssg-retrospective)
+
+#### [기술 블로그 미니로그 프로젝트: Next.js로 레이아웃 설정하기](https://minilog.vercel.app/blog/minilog-layout-retrospective)
+
+#### [기술 블로그 미니로그 프로젝트: Notion과 연결하기](https://minilog.vercel.app/blog/minilog-notion-api-retrospective)
 
 ## 기간
 
@@ -15,6 +19,7 @@ Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로�
 - Next.js
 - TypeScript
 - Tailwind CSS
+- Notion API
 - ESLint
 - Prettier
 - Husky
@@ -23,25 +28,34 @@ Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로�
 
 ```
 📦
-├─ __post
-├─ pages
-│  ├─ _app.tsx
-│  ├─ index.tsx
-│  └─ post
-│     ├─ [slug].tsx
-│     └─ index.tsx
-├─ styles
-├─ README.md
-├─ package.json
-├─ package-lock.json
+├─ .eslintignore
+├─ .eslintrc.ts
 ├─ .gitignore
 ├─ .husky
 ├─ .prettierignore
 ├─ .prettierrc
-├─ .eslintignore
-├─ .eslintrc.ts
+├─ README.md
+├─ components
+│  ├─ common
+│  │  └─ layout
+│  └─ post
+├─ config
+├─ constants
 ├─ next.config.js
+├─ package-lock.json
+├─ package.json
+├─ pages
+│  ├─ _app.tsx
+│  ├─ _document.tsx
+│  ├─ blog
+│  │  ├─ [slug].tsx
+│  │  └─ index.tsx
+│  └─ index.tsx
 ├─ postcss.config.js
+├─ public
+├─ services
+├─ styles
 ├─ tailwind.config.js
-└─ tsconfig.json
+├─ tsconfig.json
+└─ types
 ```

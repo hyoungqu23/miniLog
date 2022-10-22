@@ -19,13 +19,15 @@ type PostDetailProps = {
 const PostDetail = () => {
   const { slug } = useRouter().query;
 
-  const { data } = useSWR(['posts', slug]);
+  const { data } = useSWR<ExtendedRecordMap>(['posts', slug]);
+
+  if (!data) return <>Loading</>;
 
   return (
     <NotionRenderer
       recordMap={data}
-      fullPage={true}
-      darkMode={true}
+      fullPage={false}
+      darkMode={false}
       components={{
         Code,
         Collection,

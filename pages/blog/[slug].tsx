@@ -9,22 +9,30 @@ import { ExtendedRecordMap } from 'notion-types';
 import Head from 'next/head';
 import { getPageTitle } from 'notion-utils';
 import dynamic from 'next/dynamic';
+import useSWR, { SWRConfig, unstable_serialize } from 'swr';
+import { useRouter } from 'next/router';
 
 const PostDetail = dynamic(() => import('components/post/PostDetail'));
 
 type PostProps = {
-  blockMap: ExtendedRecordMap;
+  fallback: {
+    [key: string]: ExtendedRecordMap;
+  };
 };
 
-const Post = ({ blockMap }: PostProps) => {
-  const title = getPageTitle(blockMap);
+const Post = ({ fallback }: PostProps) => {
+  const { slug } = useRouter().query;
+
+  const title = getPageTitle(fallback[unstable_serialize(['posts', slug])]);
 
   return (
     <>
       <Head>
         <title>{`미니로그 - ${title}`}</title>
       </Head>
-      <PostDetail data={blockMap} />
+      <SWRConfig value={{ fallback }}>
+        <PostDetail />
+      </SWRConfig>
     </>
   );
 };
@@ -63,7 +71,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
 
   return {
     props: {
-      blockMap,
+      fallback: {
+        [unstable_serialize(['posts', slug])]: blockMap,
+      },
     },
   };
 };

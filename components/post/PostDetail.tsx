@@ -1,6 +1,10 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
+import useSWR from 'swr';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import { Code } from 'react-notion-x/build/third-party/code';
 import { Collection } from 'react-notion-x/build/third-party/collection';
@@ -12,11 +16,17 @@ type PostDetailProps = {
   data: ExtendedRecordMap;
 };
 
-const PostDetail = ({ data }: PostDetailProps) => {
+const PostDetail = () => {
+  const { slug } = useRouter().query;
+
+  const { data } = useSWR<ExtendedRecordMap>(['posts', slug]);
+
+  if (!data) return <>Loading</>;
+
   return (
     <NotionRenderer
       recordMap={data}
-      fullPage={true}
+      fullPage={false}
       darkMode={false}
       components={{
         Code,
@@ -24,6 +34,8 @@ const PostDetail = ({ data }: PostDetailProps) => {
         Equation,
         Modal,
         Pdf,
+        nextImage: Image,
+        nextLink: Link,
       }}
     />
   );

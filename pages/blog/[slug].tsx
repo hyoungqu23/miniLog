@@ -25,8 +25,6 @@ const Post = ({ fallback }: PostProps) => {
 
   const title = getPageTitle(fallback[unstable_serialize(['posts', slug])]);
 
-  console.log('title', title);
-
   return (
     <>
       <Head>

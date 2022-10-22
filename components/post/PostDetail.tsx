@@ -18,7 +18,7 @@ const PostDetail = () => {
   const { slug } = useRouter().query;
 
   const { data } = useSWR(['posts', slug]);
-  
+
   return (
     <NotionRenderer
       recordMap={data}

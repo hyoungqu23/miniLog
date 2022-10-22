@@ -3,8 +3,6 @@ import { useRouter } from 'next/router';
 import { ExtendedRecordMap } from 'notion-types';
 import { NotionRenderer } from 'react-notion-x';
 import useSWR from 'swr';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { Code } from 'react-notion-x/build/third-party/code';
 import { Collection } from 'react-notion-x/build/third-party/collection';
@@ -34,8 +32,6 @@ const PostDetail = () => {
         Equation,
         Modal,
         Pdf,
-        nextImage: Image,
-        nextLink: Link,
       }}
     />
   );

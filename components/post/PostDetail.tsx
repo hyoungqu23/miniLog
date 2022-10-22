@@ -7,17 +7,23 @@ import { Collection } from 'react-notion-x/build/third-party/collection';
 import { Equation } from 'react-notion-x/build/third-party/equation';
 import { Modal } from 'react-notion-x/build/third-party/modal';
 import { Pdf } from 'react-notion-x/build/third-party/pdf';
+import useSWR, { unstable_serialize } from 'swr';
+import { useRouter } from 'next/router';
 
 type PostDetailProps = {
   data: ExtendedRecordMap;
 };
 
-const PostDetail = ({ data }: PostDetailProps) => {
+const PostDetail = () => {
+  const { slug } = useRouter().query;
+
+  const { data } = useSWR(['posts', slug]);
+  
   return (
     <NotionRenderer
       recordMap={data}
       fullPage={true}
-      darkMode={false}
+      darkMode={true}
       components={{
         Code,
         Collection,

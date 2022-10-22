@@ -52,8 +52,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const data = response.data;
 
-  console.log(data);
-
   return {
     props: {
       fallback: {

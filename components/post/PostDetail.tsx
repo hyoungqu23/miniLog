@@ -11,10 +11,6 @@ import { Modal } from 'react-notion-x/build/third-party/modal';
 import { Pdf } from 'react-notion-x/build/third-party/pdf';
 import Image from 'next/image';
 
-type PostDetailProps = {
-  data: ExtendedRecordMap;
-};
-
 const PostDetail = () => {
   const { slug } = useRouter().query;
 
@@ -26,7 +22,7 @@ const PostDetail = () => {
     <NotionRenderer
       recordMap={data}
       fullPage={false}
-      darkMode={false}
+      darkMode={true}
       components={{
         Code,
         Collection,

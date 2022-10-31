@@ -2,7 +2,7 @@
 
 Next.js, TypeScript, Tailwind CSS, ESLint, Prettier, Husky를 활용한 블로그입니다.
 
-## [블로그 보러가기](https://minilog-dev.vercel.app/post)
+## [블로그 보러가기](https://minilog.vercel.app/post)
 
 #### [기술 블로그 미니로그 프로젝트: SSG로 정적 블로그 만들기](https://minilog.vercel.app/blog/minilog-ssg-retrospective)
 

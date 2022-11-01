@@ -9,7 +9,6 @@ import { Collection } from 'react-notion-x/build/third-party/collection';
 import { Equation } from 'react-notion-x/build/third-party/equation';
 import { Modal } from 'react-notion-x/build/third-party/modal';
 import { Pdf } from 'react-notion-x/build/third-party/pdf';
-import Image from 'next/image';
 
 const PostDetail = () => {
   const { slug } = useRouter().query;
@@ -29,7 +28,6 @@ const PostDetail = () => {
         Equation,
         Modal,
         Pdf,
-        nextImage: Image,
       }}
     />
   );

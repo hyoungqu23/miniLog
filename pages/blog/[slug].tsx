@@ -9,7 +9,7 @@ import { ExtendedRecordMap } from 'notion-types';
 import Head from 'next/head';
 import { getPageTitle } from 'notion-utils';
 import dynamic from 'next/dynamic';
-import useSWR, { SWRConfig, unstable_serialize } from 'swr';
+import { SWRConfig, unstable_serialize } from 'swr';
 import { useRouter } from 'next/router';
 
 const PostDetail = dynamic(() => import('components/post/PostDetail'));

@@ -20,8 +20,7 @@ const PostDetail = () => {
   return (
     <NotionRenderer
       recordMap={data}
-      fullPage={false}
-      darkMode={true}
+      fullPage={true}
       components={{
         Code,
         Collection,

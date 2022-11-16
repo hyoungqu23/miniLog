@@ -8,16 +8,20 @@ const Home = () => {
       <Head>
         <title>미니로그</title>
       </Head>
-      <h1 className="w-full text-lg font-semibold text-center">
-        안녕하세요🖐️, 프론트엔드 개발자 이형민의 기술 블로그입니다.
-      </h1>
       <Image
         src="/main.png"
         className="rounded-full hover:opacity-75"
-        width="300%"
-        height="300%"
+        width="200%"
+        height="200%"
         alt="Profile Image"
       />
+      <h1 className="w-full text-xl font-semibold text-center">
+        안녕하세요, 프론트엔드 개발자 이형민의 기술 블로그입니다.
+      </h1>
+      <h2>
+        저에 대해서 더 알고싶으시다면, <a href="https://hyoungmin.vercel.app/">포트폴리오</a>를
+        확인해보세요!
+      </h2>
     </>
   );
 };

@@ -75,5 +75,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
         [unstable_serialize(['posts', slug])]: blockMap,
       },
     },
+    revalidate: 60,
   };
 };

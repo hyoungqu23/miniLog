@@ -58,5 +58,6 @@ export const getStaticProps: GetStaticProps = async () => {
         [unstable_serialize(['posts'])]: data,
       },
     },
+    revalidate: 60,
   };
 };

@@ -14,7 +14,11 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["node_modules/"],
+  "ignorePatterns": [
+    "node_modules/",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
   "extends": [
     "airbnb",
     "airbnb-typescript",
@@ -23,16 +27,9 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@next/next/recommended",
     "plugin:prettier/recommended",
-    "plugin:react/recommended",
     "next/core-web-vitals"
   ],
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint",
-    "import",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "import", "prettier"],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "import/extensions": [
